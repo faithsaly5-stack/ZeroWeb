@@ -33,12 +33,13 @@ function prompt(query) {
 
 function run(cmd, opts = {}) {
   try {
-    return execSync(cmd, {
+    const res = execSync(cmd, {
       cwd: rootDir,
       encoding: 'utf8',
       stdio: opts.inherit ? 'inherit' : ['pipe', 'pipe', 'pipe'],
       ...opts
-    }).trim();
+    });
+    return res ? res.toString().trim() : '';
   } catch (err) {
     if (opts.throwOnError) throw err;
     return null;
