@@ -14,10 +14,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js (Active LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: Install Dependencies
@@ -26,7 +26,18 @@ jobs:
       - name: Compile Site Config & Assets
         run: npm run predeploy
 
+      - name: Check Cloudflare Credentials
+        id: check_creds
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "::warning title=Cloudflare Credentials Needed::CLOUDFLARE_API_TOKEN is not configured yet in GitHub Secrets. Skipping remote deployment. To enable automatic deployment to Cloudflare on push, add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID to repository Settings -> Secrets and variables -> Actions."
+            echo "has_token=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_token=true" >> $GITHUB_OUTPUT
+          fi
+
       - name: Deploy to Cloudflare Workers / Pages
+        if: steps.check_creds.outputs.has_token == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
