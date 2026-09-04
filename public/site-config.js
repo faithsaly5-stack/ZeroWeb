@@ -150,7 +150,7 @@ window.__SITE_CONFIG__ = {
   "SHOW_DOCS": true,
   "TELEGRAM_USERNAME": "",
   "TELEGRAM_CHANNEL": "",
-  "GITHUB_URL": "https://github.com",
+  "GITHUB_URL": "https://github.com/faithsaly5-stack/ZeroWeb",
   "TWITTER_URL": "",
   "LINKEDIN_URL": "",
   "INSTAGRAM_URL": "",

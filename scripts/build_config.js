@@ -232,7 +232,7 @@ const config = {
   // ۱۴. Social Profiles
   TELEGRAM_USERNAME: env.TELEGRAM_USERNAME || '',
   TELEGRAM_CHANNEL: env.TELEGRAM_CHANNEL || '',
-  GITHUB_URL: env.GITHUB_URL || '',
+  GITHUB_URL: env.GITHUB_URL || 'https://github.com/faithsaly5-stack/ZeroWeb',
   TWITTER_URL: env.TWITTER_URL || '',
   LINKEDIN_URL: env.LINKEDIN_URL || '',
   INSTAGRAM_URL: env.INSTAGRAM_URL || '',
