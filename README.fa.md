@@ -3,8 +3,10 @@
 # 🚀 زیرووِب (ZeroWeb)
 ### پلتفرم ساخت وب‌سایت ۱۰۰٪ رایگان و ابری با مدیریت تلگرام
 
-[![زبان: فارسی](.github/badges/lang-fa.svg)](README.fa.md)
-[![Language: English](.github/badges/lang-en.svg)](README.md)
+<p align="center">
+  <a href="README.fa.md"><img src=".github/badges/lang-fa.svg" alt="زبان: فارسی" height="28" /></a>&nbsp;
+  <a href="README.md"><img src=".github/badges/lang-en.svg" alt="Language: English" height="28" /></a>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Cloudflare-Workers%20%26%20Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare" />
