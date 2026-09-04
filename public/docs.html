@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="no-js light-theme">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){ var d=document.documentElement; d.classList.remove('no-js'); d.classList.add('js'); try{ if(localStorage.getItem('theme')==='dark') d.classList.remove('light-theme'); }catch(e){} })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پایگاه دانش و مستندات | Knowledge Base & Documentation</title>
+<meta name="description" content="مجموعه جامع و رایگان مستندات فنی، مقالات، راهنماها و فایل‌های طبقه‌بندی‌شده.">
+<meta name="keywords" content="مستندات, مقالات, پایگاه دانش, راهنما, کتابخانه آنلاین, توسعه وب">
+<meta name="author" content="Build Your Own Website for Free">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="/docs.html">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:url" content="/docs.html">
+<meta property="og:title" content="پایگاه دانش و مستندات | Knowledge Base & Documentation">
+<meta property="og:description" content="مجموعه جامع و رایگان مستندات فنی، مقالات و فایل‌های طبقه‌بندی‌شده.">
+<meta property="og:image" content="/og-image.jpg">
+<meta property="og:site_name" content="پایگاه دانش">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="/docs.html">
+<meta name="twitter:title" content="پایگاه دانش و مستندات | Knowledge Base & Documentation">
+<meta name="twitter:description" content="مجموعه جامع و رایگان مستندات فنی، مقالات و فایل‌های طبقه‌بندی‌شده.">
+<script src="/site-config.js"></script>
+<script>
+  (function () {
+    if (window.__SITE_CONFIG__) {
+      var c = window.__SITE_CONFIG__;
+      if (c.SITE_LANG) document.documentElement.lang = c.SITE_LANG;
+      if (c.SITE_DIR) document.documentElement.dir = c.SITE_DIR;
+      if (c.ACCENT_COLOR) {
+        var rgb = c.ACCENT_COLOR_RGB || '59, 130, 246';
+        var style = document.createElement('style');
+        style.id = 'theme-accent-custom';
+        style.innerHTML = ':root { --primary: ' + c.ACCENT_COLOR + ' !important; --accent: ' + c.ACCENT_COLOR + ' !important; --primary-rgb: ' + rgb + ' !important; --accent-rgb: ' + rgb + ' !important; --primary-glow: rgba(' + rgb + ', 0.35) !important; }';
+        document.head.appendChild(style);
+      }
+    }
+  })();
+</script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "خانه", "item": "/" },
+        { "@type": "ListItem", "position": 2, "name": "پایگاه دانش و مستندات", "item": "/docs.html" }
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "/docs.html#collection",
+      "url": "/docs.html",
+      "name": "پایگاه دانش و مستندات",
+      "inLanguage": "fa-IR",
+      "description": "مجموعه جامع و رایگان مستندات فنی، مقالات و فایل‌های طبقه‌بندی‌شده.",
+      "isPartOf": { "@id": "/#website" }
+    }
+  ]
+}
+</script>
+<meta name="theme-color" content="#f8fafc">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=4.7">
+<style>
+  .view-section { display: none; }
+  .view-section.active { display: block; animation: fadeIn 0.4s var(--ease) forwards; }
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" aria-hidden="true"><span id="scroll-bar"></span></div>
+<canvas id="canvas-bg" aria-hidden="true"></canvas>
+<div class="bg-pattern" aria-hidden="true"></div>
+<div class="glow-blob blob-1" aria-hidden="true"></div>
+<div class="glow-blob blob-2" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" aria-label="خانه">
+      <img src="/favicon.svg" alt="" class="brand-mark" width="40" height="40">
+      <span class="brand-text"><b id="brand-name">پایگاه دانش</b><span id="brand-sub">مستندات و مقالات</span></span>
+    </a>
+    <div class="nav-menu" id="nav-menu">
+      <div class="nav-links">
+        <a href="/" class="nav-link">خانه</a>
+        <a href="/#services" class="nav-link">خدمات</a>
+        <a href="/docs.html" class="nav-link active">مستندات</a>
+        <a href="/#posts" class="nav-link">یادداشت‌ها</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر تم" title="تغییر تم"><span class="theme-icon-dark">🌙</span><span class="theme-icon-light">☀️</span></button>
+        <a href="/#order" class="nav-cta">ارتباط</a>
+      </div>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="منو" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="page-hero fade-in">
+    <span class="eyebrow" style="justify-content:center;">پایگاه دانش</span>
+    <h1>📚 پایگاه دانش و مستندات</h1>
+    <p class="subtitle">مجموعه کامل مقالات فنی، راهنماها و مستندات طبقه‌بندی‌شده</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="جستجو در عنوان و متن تمام مقالات و مستندات..." autocomplete="off">
+        <div class="search-icon">🔍</div>
+      </div>
+
+      <div style="max-width:640px; margin:14px auto 0; text-align:center;">
+        <button type="button" id="ai-guide-btn" class="ai-btn" title="با کمک هوش مصنوعی، مرتبط‌ترین مستندات و مقالات را پیدا کنید">
+          <span class="spin"></span> ✨ راهنمای هوشمند — بپرس تا مستند یا راهنمای مناسب را پیدا کنم
+        </button>
+        <div id="ai-guide-box" class="ai-box" style="display:none; text-align:right;">
+          <div class="ai-box-head">✨ راهنمای هوشمند</div>
+          <div id="ai-guide-answer"></div>
+          <div id="ai-guide-chips" class="ai-chips"></div>
+        </div>
+      </div>
+
+      <div id="notes-loader" class="loader"></div>
+
+      <div id="view-categories" class="view-section active">
+        <div id="categories-grid" class="categories-grid"></div>
+      </div>
+
+      <div id="view-notes" class="view-section">
+        <div class="view-header">
+          <button class="cat-back-btn" onclick="backToCategories()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            بازگشت به دسته‌ها
+          </button>
+          <h2 id="current-category-title" class="view-title"></h2>
+        </div>
+        <div id="category-notes-grid" class="notes-grid"></div>
+        <div id="category-pagination" class="pagination-container"></div>
+      </div>
+
+      <div id="view-search" class="view-section">
+        <div class="view-header"><h2 class="view-title">🔍 نتایج جستجو <span id="search-count" class="cat-count" style="margin-inline-start:6px"></span></h2></div>
+        <div id="search-notes-grid" class="notes-grid"></div>
+        <div id="search-pagination" class="pagination-container"></div>
+      </div>
+
+      <div id="notes-empty" style="display:none; text-align:center; padding:50px 20px; color: var(--text-light);">هیچ موردی یافت نشد.</div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-bottom" style="border-top:none; margin-top:0;">
+      <span>© ۲۰۲۶ ساخت وب‌سایت رایگان. تمامی حقوق محفوظ است.</span>
+      <a href="/" class="nav-link">بازگشت به صفحه اصلی ←</a>
+    </div>
+  </footer>
+</div>
+
+<button class="back-to-top" id="back-to-top" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script>
+// --- Shared shell: nav + theme + scroll ---
+(function(){
+  const nav = document.getElementById('nav');
+  const scrollBar = document.getElementById('scroll-bar');
+  const backTop = document.getElementById('back-to-top');
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  let ticking = false;
+  function onScroll(){
+    const y = window.scrollY;
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    if(nav) nav.classList.toggle('scrolled', y > 20);
+    if(scrollBar) scrollBar.style.transform = 'scaleX('+(docH>0 ? (y/docH) : 0).toFixed(4)+')';
+    if(backTop) backTop.classList.toggle('show', y > 500);
+    ticking = false;
+  }
+  window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(onScroll); ticking=true; } }, {passive:true});
+  onScroll();
+  if(backTop) backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+  if(navToggle && navMenu){
+    navToggle.addEventListener('click', ()=>{ const o=navMenu.classList.toggle('open'); navToggle.classList.toggle('open',o); navToggle.setAttribute('aria-expanded', o?'true':'false'); });
+    navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ navMenu.classList.remove('open'); navToggle.classList.remove('open'); }));
+  }
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  if(themeToggleBtn){
+    themeToggleBtn.addEventListener('click', ()=>{
+      document.documentElement.classList.toggle('light-theme');
+      try{ localStorage.setItem('theme', document.documentElement.classList.contains('light-theme')?'light':'dark'); }catch(e){}
+  if (window.__SITE_CONFIG__) {
+    const c = window.__SITE_CONFIG__;
+    if (c.BRAND_LOGO_TEXT) { const el = document.getElementById('brand-name'); if (el) el.textContent = c.BRAND_LOGO_TEXT; }
+    if (c.BRAND_LOGO_SUBTITLE) { const el = document.getElementById('brand-sub'); if (el) el.textContent = c.BRAND_LOGO_SUBTITLE; }
+  }
+})();
+
+// --- Docs logic ---
+let allNotes = [];
+let categoriesMap = {};
+const loader = document.getElementById('notes-loader');
+const emptyMsg = document.getElementById('notes-empty');
+const searchInput = document.getElementById('search-input');
+const viewCategories = document.getElementById('view-categories');
+const viewNotes = document.getElementById('view-notes');
+const viewSearch = document.getElementById('view-search');
+
+function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+async function loadNotes() {
+  loader.style.display = 'block';
+  try {
+    let res = await fetch('/api/docs_list?t=' + Date.now());
+    if (!res.ok) throw new Error('Not found');
+    allNotes = await res.json();
+    loader.style.display = 'none';
+    processCategories();
+    if (searchInput.value.trim()) performSearch(searchInput.value.trim());
+    else renderCategories();
+  } catch (e) {
+    loader.style.display = 'none';
+    emptyMsg.style.display = 'block';
+    emptyMsg.innerHTML = 'خطا در دریافت لیست مستندات و مقالات.';
+    console.error('Failed to load notes', e);
+  }
+}
+
+function processCategories() {
+  categoriesMap = {};
+  if (!allNotes || allNotes.length === 0) return;
+  allNotes.forEach(note => {
+    const cat = note.category || '📁 دسته‌بندی عمومی';
+    if (!categoriesMap[cat]) categoriesMap[cat] = [];
+    categoriesMap[cat].push(note);
+  });
+}
+
+function parseCategoryName(fullName) {
+  const emojiRegex = /^([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/;
+  const match = (fullName||'').trim().match(emojiRegex);
+  if (match) return { emoji: match[1], text: fullName.replace(match[1], '').trim() };
+  return { emoji: '📚', text: fullName };
+}
+
+function renderCategories() {
+  switchView('categories');
+  const grid = document.getElementById('categories-grid');
+  grid.innerHTML = '';
+  const cats = Object.keys(categoriesMap);
+  if (cats.length === 0) {
+    emptyMsg.style.display = 'block';
+    return;
+  }
+  emptyMsg.style.display = 'none';
+  cats.forEach(catName => {
+    const items = categoriesMap[catName];
+    const { emoji, text } = parseCategoryName(catName);
+    const card = document.createElement('div');
+    card.className = 'category-card';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', text + ' (' + items.length + ' مورد)');
+    card.innerHTML =
+      '<div class="cat-card-top">' +
+        '<div class="cat-icon-badge">' + emoji + '</div>' +
+        '<span class="cat-count">' + items.length.toLocaleString('fa-IR') + ' مستند</span>' +
+      '</div>' +
+      '<div class="cat-card-body">' +
+        '<h3 class="cat-title">' + esc(text) + '</h3>' +
+      '</div>' +
+      '<div class="cat-card-footer">' +
+        '<span class="cat-action">مشاهده مستندات ←</span>' +
+      '</div>';
+    const openCat = () => openCategory(catName);
+    card.addEventListener('click', openCat);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCat(); } });
+    grid.appendChild(card);
+  });
+}
+
+let currentActiveCategory = null;
+function openCategory(catName) {
+  currentActiveCategory = catName;
+  switchView('notes');
+  const { text } = parseCategoryName(catName);
+  document.getElementById('current-category-title').textContent = text;
+  renderPaginatedNotes(categoriesMap[catName] || [], 'category-notes-grid', 'category-pagination', 1);
+  window.scrollTo({ top: 120, behavior: 'smooth' });
+}
+
+function backToCategories() {
+  currentActiveCategory = null;
+  searchInput.value = '';
+  renderCategories();
+}
+
+function switchView(viewName) {
+  viewCategories.classList.remove('active');
+  viewNotes.classList.remove('active');
+  viewSearch.classList.remove('active');
+  if (viewName === 'categories') viewCategories.classList.add('active');
+  if (viewName === 'notes') viewNotes.classList.add('active');
+  if (viewName === 'search') viewSearch.classList.add('active');
+}
+
+const PAGE_SIZE = 12;
+function renderPaginatedNotes(notesList, gridId, paginationId, page) {
+  const grid = document.getElementById(gridId);
+  const pagination = document.getElementById(paginationId);
+  grid.innerHTML = '';
+  pagination.innerHTML = '';
+  if (!notesList || notesList.length === 0) {
+    grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-light); padding: 40px 0;">موردی یافت نشد.</div>';
+    return;
+  }
+  const totalPages = Math.ceil(notesList.length / PAGE_SIZE);
+  const currentPage = Math.max(1, Math.min(page, totalPages));
+  const startIdx = (currentPage - 1) * PAGE_SIZE;
+  const currentNotes = notesList.slice(startIdx, startIdx + PAGE_SIZE);
+
+  currentNotes.forEach(note => {
+    const card = document.createElement('a');
+    card.className = 'note-card';
+    card.href = note.path || '#';
+    let excerpt = (note.text || '').replace(/\s+/g, ' ').trim();
+    if (excerpt.length > 120) excerpt = excerpt.substring(0, 120) + '...';
+    const isDoc = note.is_file;
+    const badgeLabel = isDoc ? (note.type || 'فایل') : 'مستند';
+    const actionLabel = isDoc ? 'دریافت فایل' : 'مطالعه مستند';
+    card.innerHTML =
+      '<div class="note-card-top">' +
+        '<span class="note-pill">' + (isDoc ? '📎 ' : '📄 ') + esc(badgeLabel) + '</span>' +
+      '</div>' +
+      '<h3 class="note-title">' + esc(note.title) + '</h3>' +
+      '<p class="note-desc">' + esc(excerpt) + '</p>' +
+      '<div class="note-footer">' +
+        '<span class="note-action">' + actionLabel + ' ←</span>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+
+  if (totalPages > 1) {
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'page-btn';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.textContent = 'قبلی';
+    prevBtn.onclick = () => renderPaginatedNotes(notesList, gridId, paginationId, currentPage - 1);
+    pagination.appendChild(prevBtn);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const pageBtn = document.createElement('button');
+      pageBtn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+      pageBtn.textContent = i.toLocaleString('fa-IR');
+      pageBtn.onclick = () => renderPaginatedNotes(notesList, gridId, paginationId, i);
+      pagination.appendChild(pageBtn);
+    }
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'page-btn';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.textContent = 'بعدی';
+    nextBtn.onclick = () => renderPaginatedNotes(notesList, gridId, paginationId, currentPage + 1);
+    pagination.appendChild(nextBtn);
+  }
+}
+
+let searchTimeout = null;
+let activeSearchList = [];
+function performSearch(query) {
+  if (!query) {
+    if (currentActiveCategory) openCategory(currentActiveCategory);
+    else renderCategories();
+    return;
+  }
+  switchView('search');
+  activeSearchList = allNotes.filter(n => {
+    const titleMatch = (n.title || '').toLowerCase().includes(query);
+    const textMatch = (n.text || '').toLowerCase().includes(query);
+    const catMatch = (n.category || '').toLowerCase().includes(query);
+    return titleMatch || textMatch || catMatch;
+  });
+  renderPaginatedNotes(activeSearchList, 'search-notes-grid', 'search-pagination', 1);
+  const cntEl = document.getElementById('search-count');
+  if (cntEl) cntEl.textContent = activeSearchList.length.toLocaleString('fa-IR');
+}
+searchInput.addEventListener('input', (e) => {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => performSearch(e.target.value.trim().toLowerCase()), 300);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const typing = document.activeElement === searchInput;
+  if (e.key === '/' && !typing) { e.preventDefault(); searchInput.focus(); }
+  else if (e.key === 'Escape' && typing) { searchInput.value=''; performSearch(''); searchInput.blur(); }
+});
+
+// --- Canvas background ---
+let canvas, ctx, particles = [];
+function initCanvasBg() {
+  canvas = document.getElementById('canvas-bg'); if (!canvas) return;
+  ctx = canvas.getContext('2d'); canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  particles = [];
+  const count = window.innerWidth < 768 ? 10 : 24;
+  const isLight = document.documentElement.classList.contains('light-theme');
+  const color = isLight ? 'rgba(5,150,105,0.08)' : 'rgba(52,211,153,0.12)';
+  for (let i = 0; i < count; i++) particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, size: Math.random()*1.8+0.8, speedX: Math.random()*0.4-0.2, speedY: Math.random()*0.4-0.2, color });
+}
+let __cvLast = 0, __cvHidden = false;
+document.addEventListener('visibilitychange', () => { __cvHidden = document.hidden; });
+function animateCanvas(now) {
+  if (!ctx) return;
+  requestAnimationFrame(animateCanvas);
+  if (__cvHidden) return;
+  if (now - __cvLast < 33) return;
+  __cvLast = now;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => { p.x += p.speedX; p.y += p.speedY; if (p.x<0)p.x=canvas.width; if (p.x>canvas.width)p.x=0; if (p.y<0)p.y=canvas.height; if (p.y>canvas.height)p.y=0; ctx.fillStyle=p.color; ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fill(); });
+}
+document.addEventListener('DOMContentLoaded', () => { try { var _q=new URLSearchParams(location.search).get('q'); if(_q && searchInput){ searchInput.value=_q; } } catch(e){} initCanvasBg(); animateCanvas(); loadNotes(); });
+window.addEventListener('resize', initCanvasBg, { passive: true });
+</script>
+<script src="/fx.js?v=2.5" defer></script>
+</body>
+</html>

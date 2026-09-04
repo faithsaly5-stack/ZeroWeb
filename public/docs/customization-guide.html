@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customization & Telegram CMS Guide</title>
+  <meta name="description" content="Step-by-step instructions on setting up the Telegram CMS bot and customizing the .env configuration.">
+  <meta name="category" content="🛠 Documentation">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text, #1e293b);
+      background: var(--bg, #0f172a);
+    }
+    .note-container {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      color: #f8fafc;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 0;
+      color: #60a5fa;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: #93c5fd;
+      margin-top: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.5rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(96, 165, 250, 0.2);
+      color: #93c5fd;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    ul, ol { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    code {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: ui-monospace, monospace;
+      font-size: 0.9em;
+      color: #38bdf8;
+    }
+    pre {
+      background: #090d16;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="note-container">
+    <div class="badge">🛠 Documentation</div>
+    <h1>Customization & Telegram CMS Guide</h1>
+    <p>This website is built to be managed easily from your phone via Telegram or from your local machine via the <code>.env</code> file.</p>
+    
+    <h2>1. Setting Up Telegram CMS</h2>
+    <ol>
+      <li>Open Telegram and message <code>@BotFather</code> to create a new bot (run <code>/newbot</code>).</li>
+      <li>Copy the HTTP API Token provided by BotFather.</li>
+      <li>Message <code>@userinfobot</code> in Telegram to get your numeric <code>Chat ID</code>.</li>
+      <li>Open your <code>.env</code> file and add:
+        <pre><code>BOT_TOKEN=your_token_here
+CHAT_ID=your_numeric_chat_id</code></pre>
+      </li>
+      <li>Double-click <code>deploy.bat</code> to upload your secrets and activate your webhook automatically!</li>
+    </ol>
+
+    <h2>2. Telegram Bot Commands</h2>
+    <ul>
+      <li><code>/start</code>: Main admin control menu.</li>
+      <li><code>/add_note</code>: Send any document, PDF, or text note to publish instantly.</li>
+      <li><code>/stats</code>: Check real-time site visitor metrics.</li>
+      <li><code>/announce</code>: Set or update the live notification banner on your website.</li>
+    </ul>
+
+    <h2>3. Managing Inquiries & Q&A</h2>
+    <p>When a visitor fills out the contact form on your site, you will receive an alert on Telegram with a unique inquiry ID. Simply reply directly to that message on Telegram to respond or publish the answer!</p>
+
+    <a href="/docs.html" class="btn-back">← Back to Documentation</a>
+  </div>
+</body>
+</html>

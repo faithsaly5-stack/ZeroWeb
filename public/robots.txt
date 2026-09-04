@@ -1,0 +1,18 @@
+# Robots & Crawler Policy for وبسایت رایگان خود را بسازید
+User-agent: *
+Allow: /
+Allow: /docs.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /fx.js
+Allow: /favicon.svg
+Allow: /og-image.jpg
+Allow: /og-image-fa.jpg
+Allow: /icons.svg
+
+Disallow: /download/
+Disallow: /api/
+Disallow: /admin
+
+Sitemap: https://my-free-website.pages.dev/sitemap.xml
+Host: my-free-website.pages.dev

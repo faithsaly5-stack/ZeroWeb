@@ -1,0 +1,25 @@
+{
+  "name": "zeroweb",
+  "version": "1.0.0",
+  "description": "ZeroWeb - 100% Free Turnkey Personal & Portfolio Website on Cloudflare Pages with Zero-Cost Edge Hosting & Telegram CMS",
+  "main": "_worker.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faithsaly5-stack/ZeroWeb.git"
+  },
+  "homepage": "https://github.com/faithsaly5-stack/ZeroWeb#readme",
+  "bugs": {
+    "url": "https://github.com/faithsaly5-stack/ZeroWeb/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build:config": "node scripts/build_config.js",
+    "predeploy": "node scripts/build_config.js && node update_docs.js && node generate-sitemap.js && node scripts/minify_assets.js",
+    "deploy": "npm run predeploy && wrangler deploy",
+    "deploy:github": "node scripts/github_deployer.js",
+    "dev": "npm run build:config && wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.107.0"
+  }
+}

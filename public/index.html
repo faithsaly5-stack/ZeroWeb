@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="no-js light-theme">
+
+<head>
+  <meta charset="UTF-8">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js'); d.classList.add('js');
+      try { if (localStorage.getItem('theme') === 'dark') d.classList.remove('light-theme'); } catch (e) { }
+    })();
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ساخت و راه‌اندازی رایگان وب‌سایت | Build Your Own Website for Free</title>
+  <meta name="description"
+    content="قالب آماده، پرسرعت و رایگان وب‌سایت برای کلودفلر (Cloudflare Pages) همراه با سیستم مدیریت محتوای تلگرام (Telegram CMS) و پایگاه دانش و مستندات.">
+  <meta name="keywords"
+    content="ساخت وب سایت رایگان, کلودفلر پیجز, ربات تلگرام cms, قالب آماده وب سایت, هاست رایگان, پورتفولیو, مستندات">
+  <meta name="author" content="Build Your Own Website for Free">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:url" content="/">
+  <meta property="og:title" content="ساخت و راه‌اندازی رایگان وب‌سایت | Build Your Own Website for Free">
+  <meta property="og:description"
+    content="پلتفرم رایگان، امن و مدرن روی شبکه ابری Cloudflare با قابلیت مدیریت کامل از طریق تلگرام و فایل .env.">
+  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Build Your Own Website for Free">
+  <meta property="og:site_name" content="Build Your Own Website for Free">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="/">
+  <meta name="twitter:title" content="ساخت و راه‌اندازی رایگان وب‌سایت | Build Your Own Website for Free">
+  <meta name="twitter:description"
+    content="پلتفرم رایگان، امن و مدرن روی شبکه ابری Cloudflare با قابلیت مدیریت کامل از طریق تلگرام.">
+  <meta name="twitter:image" content="/og-image.jpg">
+
+  <meta name="theme-color" content="#f8fafc">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=5.1.0">
+
+  <!-- Dynamic Site Config -->
+  <script src="/site-config.js"></script>
+  <script>
+    (function () {
+      if (window.__SITE_CONFIG__) {
+        var c = window.__SITE_CONFIG__;
+        if (c.SITE_LANG) document.documentElement.lang = c.SITE_LANG;
+        if (c.SITE_DIR) document.documentElement.dir = c.SITE_DIR;
+        if (c.ACCENT_COLOR) {
+          var rgb = c.ACCENT_COLOR_RGB || '59, 130, 246';
+          var style = document.createElement('style');
+          style.id = 'theme-accent-custom';
+          style.innerHTML = ':root { --primary: ' + c.ACCENT_COLOR + ' !important; --accent: ' + c.ACCENT_COLOR + ' !important; --primary-rgb: ' + rgb + ' !important; --accent-rgb: ' + rgb + ' !important; --primary-glow: rgba(' + rgb + ', 0.35) !important; }';
+          document.head.appendChild(style);
+        }
+      }
+    })();
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "/#website",
+      "url": "/",
+      "name": "Build Your Own Website for Free",
+      "inLanguage": "fa-IR",
+      "description": "پلتفرم آماده و متن‌باز راه‌اندازی وب‌سایت با هاست رایگان کلودفلر و سیستم مدیریت محتوای تلگرام.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": "/docs.html?q={search_term_string}" },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/#breadcrumbs",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "صفحه اصلی", "item": "/" },
+        { "@type": "ListItem", "position": 2, "name": "پایگاه دانش و مستندات", "item": "/docs.html" }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "/#software",
+      "name": "Build Your Own Website for Free Template",
+      "operatingSystem": "All",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
+  </script>
+</head>
+
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-bar"></span></div>
+
+  <canvas id="canvas-bg" aria-hidden="true"></canvas>
+  <div class="bg-pattern" aria-hidden="true"></div>
+  <div class="glow-blob blob-1" aria-hidden="true"></div>
+  <div class="glow-blob blob-2" aria-hidden="true"></div>
+  <div class="glow-blob blob-3" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand" aria-label="خانه">
+        <img src="/favicon.svg" alt="لوگو" class="brand-mark" width="40" height="40">
+        <span class="brand-text">
+          <b id="brand-title">وب‌سایت رایگان</b>
+          <span id="brand-subtitle">Cloudflare Pages & Telegram CMS</span>
+        </span>
+      </a>
+
+      <div class="nav-menu" id="nav-menu">
+        <div class="nav-links">
+          <a href="#about" class="nav-link" id="nav-link-about">ویژگی‌ها</a>
+          <a href="#portfolio" class="nav-link" id="nav-link-portfolio">پلتفرم‌ها</a>
+          <a href="#services" class="nav-link" id="nav-link-services">امکانات</a>
+          <a href="/docs.html" class="nav-link" id="nav-link-docs">مستندات</a>
+          <a href="#posts" class="nav-link" id="nav-link-posts">یادداشت‌ها</a>
+          <a href="#qa" class="nav-link" id="nav-link-qa">پرسش و پاسخ</a>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="تغییر تم" title="تغییر تم">
+            <span class="theme-icon-dark">🌙</span><span class="theme-icon-light">☀️</span>
+          </button>
+          <a id="nav-tg-link" href="#order" class="nav-tg" aria-label="تلگرام" title="تلگرام">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M21.94 4.3 18.9 19.02c-.23 1.02-.84 1.27-1.7.79l-4.7-3.46-2.27 2.18c-.25.25-.46.46-.94.46l.33-4.77 8.68-7.84c.38-.34-.08-.53-.59-.19l-10.73 6.76-4.62-1.45c-1-.31-1.02-1 .21-1.48l18.06-6.96c.84-.31 1.57.19 1.3 1.44z" />
+            </svg>
+          </a>
+          <a href="#order" class="nav-cta" id="nav-cta-btn">شروع رایگان</a>
+        </div>
+      </div>
+
+      <div class="nav-extra">
+        <button id="lang-toggle" class="theme-toggle-btn" aria-label="تغییر زبان" title="تغییر زبان / Change Language">
+          <span class="lang-text" style="font-weight:700; font-family:system-ui; font-size:14px;">EN</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="منو" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container" id="top">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-badge" id="hero-badge-el">
+        <span class="dot"></span> ⚡ میزبانی ۱۰۰٪ رایگان &nbsp;·&nbsp; کلودفلر &nbsp;·&nbsp; سیستم مدیریت تلگرام
+      </div>
+
+      <h1 id="hero-title-el">
+        ساخت و راه‌اندازی رایگان وب‌سایت
+        <span class="hero-title-sub" id="hero-sub-el">کلودفلر و سیستم مدیریت تلگرام</span>
+      </h1>
+      <p class="hero-lead" id="hero-lead-el">
+        وب‌سایت شخصی و حرفه‌ای خود را به‌صورت کاملاً <b>رایگان</b> روی زیرساخت پرسرعت Cloudflare پیاده‌سازی کنید و تمام محتوا، نظرات و فایل‌ها را مستقیماً از <b>تلگرام</b> مدیریت نمایید.
+      </p>
+      <p class="subtitle" id="hero-tagline-el">میزبانی ابری جهانی &nbsp;·&nbsp; بدون هزینه ماهانه &nbsp;·&nbsp; پیکربندی با .env</p>
+
+      <div class="hero-cta">
+        <a href="#order" class="btn btn-primary" id="hero-cta-primary">
+          <span>شروع و راه‌اندازی</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </a>
+        <a href="/docs.html" class="btn btn-ghost" id="hero-cta-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>مشاهده مستندات و مقالات</span>
+        </a>
+      </div>
+
+      <div class="social-pills" role="navigation" aria-label="ویژگی‌های برجسته">
+        <a href="#portfolio" class="pill pill-interactive">🚀 میزبانی لبه Cloudflare</a>
+        <a href="#portfolio" class="pill pill-interactive">🤖 ربات تلگرام CMS</a>
+        <a href="/docs.html" class="pill pill-interactive">📚 پایگاه دانش و مستندات</a>
+        <a href="#about" class="pill pill-interactive">⚡ شخصی‌سازی با .env</a>
+      </div>
+
+      <!-- Interactive Focus Modes -->
+      <div class="hero-modes-wrapper" role="tablist" aria-label="انتخاب حوزه تمرکز">
+        <button type="button" class="hero-mode-btn active" id="hero-focus-btn-1" data-mode="cloud" role="tab" aria-selected="true">
+          <span>☁️ میزبانی ابری رایگان</span>
+        </button>
+        <button type="button" class="hero-mode-btn" id="hero-focus-btn-2" data-mode="tg" role="tab" aria-selected="false">
+          <span>🤖 مدیریت کامل از تلگرام</span>
+        </button>
+        <button type="button" class="hero-mode-btn" id="hero-focus-btn-3" data-mode="env" role="tab" aria-selected="false">
+          <span>🛠 شخصی‌سازی با .env</span>
+        </button>
+      </div>
+
+      <!-- Dynamic Focus Highlights Card -->
+      <div class="hero-focus-box" id="hero-focus-box">
+        <div class="hero-focus-title" id="hero-focus-title">
+          <span>☁️ میزبانی پرسرعت روی سرورهای جهانی Cloudflare</span>
+        </div>
+        <p class="hero-focus-desc" id="hero-focus-desc">
+          استقرار سریع با فایل deploy.bat؛ استفاده از ۱۰۰ هزار درخواست رایگان روزانه در Cloudflare، پشتیبانی از HTTPS خودکار و اتصال رایگان دامنه اختصاصی شما.
+        </p>
+      </div>
+
+      <div class="hero-stats" id="hero-stats-section">
+        <div class="stat" id="stat-card-1">
+          <div class="stat-top">
+            <span class="stat-icon" id="stat-1-icon">💰</span>
+            <div class="stat-num" id="stat-1-num">۰$</div>
+          </div>
+          <div class="stat-label" id="stat-1-label">هزینه ماهانه میزبانی (۱۰۰٪ رایگان)</div>
+        </div>
+        <div class="stat" id="stat-card-2">
+          <div class="stat-top">
+            <span class="stat-icon" id="stat-2-icon">⚡</span>
+            <div class="stat-num" id="stat-2-num">۵۰ms</div>
+          </div>
+          <div class="stat-label" id="stat-2-label">میانگین سرعت شبکه جهانی Edge</div>
+        </div>
+        <div class="stat" id="stat-card-3">
+          <div class="stat-top">
+            <span class="stat-icon" id="stat-3-icon">🤖</span>
+            <div class="stat-num" id="stat-3-num">۲۴/۷</div>
+          </div>
+          <div class="stat-label" id="stat-3-label">مدیریت آنلاین و آنی از تلگرام</div>
+        </div>
+      </div>
+
+      <div class="credentials-bar">
+        <span class="credential-pill"><span class="seal-icon">⚡</span> استقرار با یک کلیک (deploy.bat)</span>
+        <span class="credential-pill"><span class="seal-icon">🔒</span> پنل ادمین اختصاصی با پسورد امن</span>
+        <span class="credential-pill"><span class="seal-icon">📱</span> طراحی کاملاً واکنش‌گرا و سبک</span>
+        <span class="credential-pill"><span class="seal-icon">🌐</span> سئو پیشرفته و پشتیبانی چندزبانه</span>
+      </div>
+
+      <a href="#about" class="scroll-cue" id="scroll-cue" aria-label="اسکرول به پایین">
+        <span class="mouse" aria-hidden="true"></span>
+        <span>مشاهده امکانات</span>
+      </a>
+    </header>
+
+    <main>
+      <!-- ABOUT THIS PLATFORM -->
+      <section class="section reveal" id="about">
+        <div class="section-head center">
+          <span class="eyebrow" id="about-eyebrow">درباره این پروژه</span>
+          <h2 class="section-title" id="about-title"><span class="icon">✨</span> چرا این قالب بهترین انتخاب است؟</h2>
+          <p class="section-desc" id="about-desc">یک راه‌حل کامل و آماده که به شما امکان می‌دهد بدون پرداخت هزینه سرور، یک وب‌سایت مدرن با کنترل‌پنل تلگرامی داشته باشید.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card stats-card" id="about-card-1">
+            <div class="card-icon" id="about-card-1-icon">☁️</div>
+            <h3 id="about-card-1-title">میزبانی جهانی Cloudflare</h3>
+            <p id="about-card-1-desc">سایت شما بدون نیاز به خرید هاست ماهانه بر روی قدرتمندترین شبکه ابری جهان اجرا می‌شود.</p>
+            <span class="card-badge" id="about-card-1-badge">۱۰۰٪ رایگان و امن</span>
+          </div>
+          <div class="card stats-card" id="about-card-2">
+            <div class="card-icon" id="about-card-2-icon">🤖</div>
+            <h3 id="about-card-2-title">سیستم مدیریت تلگرام</h3>
+            <p id="about-card-2-desc">با ارسال پیام در تلگرام، یادداشت و فایل منتشر کنید، به سوالات کاربران پاسخ دهید و آمار را ببینید.</p>
+            <span class="card-badge" id="about-card-2-badge">مدیریت مستقیم از موبایل</span>
+          </div>
+          <div class="card stats-card" id="about-card-3">
+            <div class="card-icon" id="about-card-3-icon">⚙️</div>
+            <h3 id="about-card-3-title">شخصی‌سازی همه‌چیز در .env</h3>
+            <p id="about-card-3-desc">تمام عنوان‌ها، نام نویسنده، شماره‌ها، ایمیل، رنگ‌ها و آدرس شبکه‌های اجتماعی در فایل .env تعریف می‌شوند.</p>
+            <span class="card-badge" id="about-card-3-badge">سفارشی‌سازی بدون کدنویسی</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO / PLATFORMS (BENTO GRID) -->
+      <section class="section reveal" id="portfolio">
+        <div class="section-head center">
+          <span class="eyebrow" id="bento-eyebrow">پلتفرم‌های داخلی قالب</span>
+          <h2 class="section-title" id="bento-title"><span class="icon">🏛️</span> سیستم‌های آماده و فعال سایت</h2>
+          <p class="section-desc" id="bento-desc">این پلتفرم تنها یک صفحه ساده نیست؛ چندین سیستم کاربردی از پیش ساخته شده در اختیار شماست.</p>
+        </div>
+        
+        <div class="portfolio-bento">
+          <!-- Bento 1: Global Edge CDN & Cloud Hosting -->
+          <a href="#process" class="bento-card reveal bento-cloud" id="bento-1-link">
+            <div class="bento-glow"></div>
+            <div class="bento-top">
+              <div class="bento-icon-wrap"><span class="pf-icon">⚡</span></div>
+              <span class="bento-badge bento-badge-live" id="bento-1-badge">🌍 شبکه جهانی Edge</span>
+            </div>
+            <div class="bento-content">
+              <h3 id="bento-1-title">میزبانی لبه ابری با تاخیر صفر</h3>
+              <p id="bento-1-desc">پخش محتوا در بیش از ۳۰۰ شهر دنیا توسط Cloudflare Workers، لود فوق‌سریع کمتر از ۱۰۰ میلی‌ثانیه و امنیت داخلی DDoS.</p>
+              <div class="bento-features">
+                <span class="bento-tag">🚀 سرعت فوق‌العاده</span>
+                <span class="bento-tag">🛡️ محافظت لبه ابری</span>
+              </div>
+            </div>
+            <div class="bento-footer"><span class="bento-cta-btn">مشاهده معماری زیرساخت ←</span></div>
+          </a>
+
+          <!-- Bento 2: Notes & Docs -->
+          <a href="/docs.html" class="bento-card reveal bento-notes" id="bento-2-link">
+            <div class="bento-glow"></div>
+            <div class="bento-top">
+              <div class="bento-icon-wrap"><span class="pf-icon">📚</span></div>
+              <span class="bento-badge" id="bento-2-badge">📖 پایگاه دانش</span>
+            </div>
+            <div class="bento-content">
+              <h3 id="bento-2-title">پایگاه دانش، مستندات و مقالات</h3>
+              <p id="bento-2-desc">سیستم دسته‌بندی مقالات و مستندات فنی با موتور جستجوی آنی در متون و امکان انتشار و به‌روزرسانی مستقیم از تلگرام.</p>
+              <div class="bento-features">
+                <span class="bento-tag">🔍 جستجوی درلحظه</span>
+                <span class="bento-tag">📑 برچسب‌گذاری هوشمند</span>
+              </div>
+            </div>
+            <div class="bento-footer"><span class="bento-cta-btn">مشاهده مستندات ←</span></div>
+          </a>
+
+          <!-- Bento 3: Real-time Analytics & System Telemetry -->
+          <a href="#about" class="bento-card reveal bento-tools" id="bento-3-link">
+            <div class="bento-glow"></div>
+            <div class="bento-top">
+              <div class="bento-icon-wrap"><span class="pf-icon">📊</span></div>
+              <span class="bento-badge" id="bento-3-badge">⚡ آمار لحظه‌ای</span>
+            </div>
+            <div class="bento-content">
+              <h3 id="bento-3-title">آمار و تلمتری درلحظه سیستم</h3>
+              <p id="bento-3-desc">پایش دائمی ترافیک، درخواست‌های ورودی و وضعیت سلامت وب‌سایت با گزارش‌گیری هوشمند مستقیم در تلگرام.</p>
+              <div class="bento-features">
+                <span class="bento-tag">📈 گزارش لحظه‌ای</span>
+                <span class="bento-tag">🛡️ نظارت ۲۴/۷</span>
+              </div>
+            </div>
+            <div class="bento-footer"><span class="bento-cta-btn">مشاهده قابلیت‌ها ←</span></div>
+          </a>
+
+          <!-- Bento 4: Telegram CMS Hub -->
+          <a href="#order" class="bento-card reveal bento-game pf-card-btn" id="bento-4-link">
+            <div class="bento-glow"></div>
+            <div class="bento-top">
+              <div class="bento-icon-wrap"><span class="pf-icon">🤖</span></div>
+              <span class="bento-badge" id="bento-4-badge">⚡ مدیریت هوشمند</span>
+            </div>
+            <div class="bento-content">
+              <h3 id="bento-4-title">ربات تلگرام و وب‌هوک هوشمند</h3>
+              <p id="bento-4-desc">دریافت مستقیم پیام‌های فرم تماس در تلگرام، پاسخ به کاربران و مدیریت بی‌درنگ سایت مستقیماً از گوشی موبایل بدون نیاز به ورود به داشبورد.</p>
+              <div class="bento-features">
+                <span class="bento-tag">📱 مدیریت مستقیم از موبایل</span>
+                <span class="bento-tag">⚡ نوتیفیکیشن درلحظه</span>
+              </div>
+            </div>
+            <div class="bento-footer"><span class="bento-cta-btn">تست و راه‌اندازی ←</span></div>
+          </a>
+        </div>
+      </section>
+
+      <!-- SERVICES & CAPABILITIES -->
+      <section class="section reveal" id="services">
+        <div class="section-head center">
+          <span class="eyebrow" id="services-eyebrow">ماژول‌ها و امکانات</span>
+          <h2 class="section-title" id="services-title"><span class="icon">🛠</span> تمام آنچه برای یک سایت کامل نیاز دارید</h2>
+          <p class="section-desc" id="services-desc">همه این امکانات از پیش پیکربندی شده و با فایل .env یا کلودفلر هماهنگ هستند.</p>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <div class="service-card reveal" id="service-card-1">
+            <div class="svc-icon" id="service-1-icon">☁️</div>
+            <h3 id="service-1-title">میزبانی رایگان Cloudflare Pages</h3>
+            <p id="service-1-desc">شبکه توزیع محتوای جهانی با امنیت لایه‌ای، گواهی SSL رایگان و ۱۰۰ هزار درخواست روزانه بدون هزینه.</p>
+          </div>
+          <div class="service-card reveal" id="service-card-2">
+            <div class="svc-icon" id="service-2-icon">🤖</div>
+            <h3 id="service-2-title">ربات تلگرام هوشمند</h3>
+            <p id="service-2-desc">پاسخ‌گویی به فرم‌های تماس، دریافت نوتیفیکیشن پیام‌ها و انتشار مطالب از طریق چت تلگرام.</p>
+          </div>
+          <div class="service-card reveal" id="service-card-3">
+            <div class="svc-icon" id="service-3-icon">🔒</div>
+            <h3 id="service-3-title">داشبورد مدیریت /admin</h3>
+            <p id="service-3-desc">پنل مدیریت با رمز عبور جهت مشاهده پیام‌ها، وضعیت سلامت سیستم و مدیریت فایل‌های سایت.</p>
+          </div>
+          <div class="service-card reveal" id="service-card-4">
+            <div class="svc-icon" id="service-4-icon">⚡</div>
+            <h3 id="service-4-title">سرعت و بهینه‌سازی سئو (CDN & SEO)</h3>
+            <p id="service-4-desc">معماری بدون سرور با امتیاز ۱۰۰ در Lighthouse، ساخت خودکار نقشه سایت sitemap.xml و کشینگ ابری پیشرفته.</p>
+          </div>
+          <div class="service-card reveal" id="service-card-5">
+            <div class="svc-icon" id="service-5-icon">📚</div>
+            <h3 id="service-5-title">پایگاه دانش و مستندات</h3>
+            <p id="service-5-desc">آرشیو مقالات و مستندات فنی با جستجوی هوشمند در متن و فیلتر دسته‌بندی موضوعی.</p>
+          </div>
+          <div class="service-card reveal" id="service-card-6">
+            <div class="svc-icon" id="service-6-icon">🎨</div>
+            <h3 id="service-6-title">تم تیره و روشن (Dark & Light)</h3>
+            <p id="service-6-desc">طراحی مدرن با پالت شیشه‌ای، پشتیبانی از ذخیره تم و ترجیحات سیستمی کاربر.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW TO GET STARTED (PROCESS) -->
+      <section class="section reveal" id="process">
+        <div class="section-head center">
+          <span class="eyebrow" id="process-eyebrow">مراحل راه‌اندازی</span>
+          <h2 class="section-title" id="process-title"><span class="icon">🧭</span> راه‌اندازی در ۴ مرحله ساده</h2>
+        </div>
+        <div class="process">
+          <div class="step" id="step-card-1">
+            <div class="step-num" id="step-1-num">۱</div>
+            <h4 id="step-1-title">تنظیم فایل .env</h4>
+            <p id="step-1-desc">فایل .env را باز کرده و نام، توضیحات، توکن ربات تلگرام و لینک‌های خود را وارد کنید.</p>
+          </div>
+          <div class="step" id="step-card-2">
+            <div class="step-num" id="step-2-num">۲</div>
+            <h4 id="step-2-title">اجرای deploy.bat</h4>
+            <p id="step-2-desc">فایل deploy.bat را اجرا کنید تا اطلاعات به‌طور خودکار کامپایل و آماده آپلود شوند.</p>
+          </div>
+          <div class="step" id="step-card-3">
+            <div class="step-num" id="step-3-num">۳</div>
+            <h4 id="step-3-title">ورود به Cloudflare</h4>
+            <p id="step-3-desc">در صورت اولین استقرار، مرورگر باز شده و با یک کلیک وارد حساب کلودفلر می‌شوید.</p>
+          </div>
+          <div class="step" id="step-card-4">
+            <div class="step-num" id="step-4-num">۴</div>
+            <h4 id="step-4-title">انتشار جهانی</h4>
+            <p id="step-4-desc">سایت شما فوراً روی دامنه اختصاصی کلودفلر فعال و با سرورهای جهانی هماهنگ می‌گردد.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT / COLLABORATION FORM -->
+      <section class="section reveal" id="order">
+        <div class="section-head center">
+          <span class="eyebrow" id="contact-eyebrow">ارتباط و پیام</span>
+          <h2 class="section-title" id="contact-title"><span class="icon">✉️</span> فرم ارتباط و ثبت درخواست</h2>
+          <p class="section-desc" id="contact-desc">پیام شما مستقیماً به تلگرام ارسال می‌شود و می‌توانید بلافاصله به آن پاسخ دهید.</p>
+        </div>
+        <div class="order-wrap">
+          <div class="card order-card">
+            <form id="order-form" novalidate>
+              <div class="form-row">
+                <div class="input-group">
+                  <input type="text" name="name" id="ord-name" required placeholder=" " autocomplete="name">
+                  <label for="ord-name">نام و نام خانوادگی</label>
+                </div>
+                <div class="input-group">
+                  <input type="text" name="contact" id="ord-contact" required placeholder=" ">
+                  <label for="ord-contact">راه ارتباطی (تلگرام / ایمیل / تلفن)</label>
+                </div>
+              </div>
+              <div class="input-group select-group">
+                <select name="service" id="service">
+                  <option value="">— موضوع پیام —</option>
+                  <option>درخواست همکاری و پروژه</option>
+                  <option>پیشنهاد و انتقاد</option>
+                  <option>سوال درباره سایت</option>
+                  <option>سایر موارد</option>
+                </select>
+                <label for="service">موضوع پیام</label>
+              </div>
+              <div class="input-group">
+                <textarea name="details" id="details" required placeholder=" " rows="4"></textarea>
+                <label for="details">متن پیام شما</label>
+              </div>
+              <button type="submit" id="order-submit">
+                <span class="btn-text">ارسال پیام</span>
+                <span class="loader-mini"></span>
+              </button>
+            </form>
+            <div id="toast" class="toast">پیام شما با موفقیت ارسال شد!</div>
+          </div>
+
+          <aside class="tg-card">
+            <div class="tg-icon">💬</div>
+            <h3>پشتیبانی مستقیم تلگرام</h3>
+            <p>پیام‌های ارسالی از این فرم فوراً در حساب تلگرام شما دریافت می‌شوند.</p>
+            <a id="aside-tg-link" href="#order" class="tg-btn">ارتباط در تلگرام</a>
+            <div class="tg-sub">ارتباط آنلاین و دریافت آنی اعلان‌ها</div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- NOTES & ARTICLES BLOG GRID -->
+      <section class="section reveal" id="posts">
+        <div class="section-head center">
+          <span class="eyebrow" id="posts-eyebrow">مستندات و مقالات</span>
+          <h2 class="section-title" id="posts-title"><span class="icon">📝</span> جدیدترین یادداشت‌ها</h2>
+          <p class="section-desc" id="posts-desc">مطالب و مستنداتی که از طریق تلگرام یا پوشه docs اضافه شده‌اند.</p>
+        </div>
+
+        <div id="posts-loader" class="loader"></div>
+        <div id="posts-grid" class="blog-grid"></div>
+      </section>
+
+      <!-- FAQ & LIVE Q&A -->
+      <section class="section reveal" id="qa">
+        <div class="section-head center">
+          <span class="eyebrow" id="qa-eyebrow">راهنما و سوالات</span>
+          <h2 class="section-title" id="qa-title"><span class="icon">💬</span> سوالات متداول و پرسش و پاسخ</h2>
+          <p class="section-desc" id="qa-desc">پاسخ به سوالات پرتکرار و امکان مطرح کردن پرسش جدید به‌صورت آنلاین.</p>
+        </div>
+
+        <!-- FAQ Search & Filter Bar -->
+        <div class="faq-search-wrapper">
+          <div class="faq-search-box">
+            <svg class="faq-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="faq-search-input" class="faq-search-input" placeholder="جستجو در سوالات متداول..." aria-label="جستجو در سوالات متداول">
+            <button type="button" id="faq-search-clear" class="faq-search-clear" style="display:none;" aria-label="پاک کردن جستجو">&times;</button>
+          </div>
+          <div class="faq-chips" role="tablist" aria-label="دسته‌بندی سوالات">
+            <button type="button" class="faq-chip active" data-faq-cat="all">✨ همه سوالات</button>
+            <button type="button" class="faq-chip" data-faq-cat="setup">🚀 راه‌اندازی</button>
+            <button type="button" class="faq-chip" data-faq-cat="tg">🤖 تلگرام</button>
+            <button type="button" class="faq-chip" data-faq-cat="cf">☁️ کلودفلر</button>
+          </div>
+        </div>
+
+        <!-- FAQ Accordions -->
+        <div class="faq" id="faq-accordion-list" style="margin-bottom: 36px;">
+          <details class="faq-item" data-faq-cat="setup cf">
+            <summary id="faq-1-q">آیا میزبانی این وب‌سایت واقعاً ۱۰۰٪ رایگان است؟</summary>
+            <div class="faq-a" id="faq-1-a">بله؛ سرویس Cloudflare Pages و Workers پلن رایگان دائمی و بسیار سخاوتمندانه‌ای دارند که شامل ۱۰۰ هزار درخواست روزانه، گواهی SSL رایگان و پهنای باند نامحدود است.</div>
+          </details>
+          <details class="faq-item" data-faq-cat="setup">
+            <summary id="faq-2-q">چگونه محتوا و ظاهر سایت را تغییر دهم؟</summary>
+            <div class="faq-a" id="faq-2-a">کافی است فایل .env را در پوشه پروژه باز کنید و تمام متغیرها (از جمله نام، عنوان، متن‌ها، ایمیل، رنگ و شناسه‌ها) را به دلخواه خود تغییر دهید و مجدداً deploy.bat را اجرا نمایید.</div>
+          </details>
+          <details class="faq-item" data-faq-cat="tg">
+            <summary id="faq-3-q">چگونه ربات تلگرام را برای مدیریت سایت فعال کنم؟</summary>
+            <div class="faq-a" id="faq-3-a">در تلگرام به @BotFather پیام دهید و دستور newbot/ را بزنید تا توکن ربات بگیرید. سپس شناسه Chat ID خود را از botuserinfo@ بگیرید و هر دو را در فایل .env قرار دهید.</div>
+          </details>
+          <details class="faq-item" data-faq-cat="cf">
+            <summary id="faq-4-q">آیا می‌توانم دامنه اختصاصی خودم (مثل .com یا .ir) را متصل کنم؟</summary>
+            <div class="faq-a" id="faq-4-a">بله؛ کلودفلر امکان اتصال بی‌شمار دامنه اختصاصی با فعال‌سازی خودکار HTTPS و بدون پرداخت هیچ هزینه‌ای را فراهم می‌کند.</div>
+          </details>
+        </div>
+
+        <!-- Q&A Ask Form -->
+        <div class="card qa-ask-card">
+          <form id="qa-form" novalidate>
+            <div class="input-group">
+              <input type="text" name="name" id="qa-name" required placeholder=" " autocomplete="name" maxlength="80">
+              <label for="qa-name">نام شما</label>
+            </div>
+            <div class="input-group">
+              <textarea name="message" id="qa-message" required placeholder=" " rows="3" maxlength="1000"></textarea>
+              <label for="qa-message">متن پرسش شما</label>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <input type="text" name="website" id="qa-website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="qa-ask-foot">
+              <button type="submit" id="qa-submit">
+                <span class="btn-text">ثبت پرسش</span>
+                <span class="loader-mini"></span>
+              </button>
+              <p class="qa-note">پرسش‌ها در تلگرام ادمین دریافت شده و پس از پاسخ‌گویی در این بخش نمایش داده می‌شوند.</p>
+            </div>
+          </form>
+        </div>
+
+        <div id="qa-loader" class="loader"></div>
+        <div id="qa-list" class="qa-container"></div>
+      </section>
+    </main>
+  </div>
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="nav-brand">
+          <img src="/favicon.svg" alt="لوگو" class="brand-mark" width="40" height="40" loading="lazy">
+          <span class="brand-text">
+            <b id="footer-brand-title">وب‌سایت رایگان</b>
+            <span id="footer-brand-subtitle">Cloudflare Pages & Telegram CMS</span>
+          </span>
+        </a>
+        <p id="footer-desc">قالب آماده و متن‌باز برای ساخت وب‌سایت با میزبانی رایگان کلودفلر، پایگاه دانش و مستندات، و سیستم مدیریت تلگرام.</p>
+      </div>
+      <div class="footer-col">
+        <h4>بخش‌های سایت</h4>
+        <a href="#about">ویژگی‌ها</a>
+        <a href="#portfolio">پلتفرم‌ها</a>
+        <a href="#services">امکانات</a>
+        <a href="#posts">مستندات</a>
+        <a href="#qa">پرسش و پاسخ</a>
+      </div>
+      <div class="footer-col">
+        <h4>دسترسی سریع</h4>
+        <a href="/docs.html">پایگاه دانش و مستندات</a>
+        <a href="#process">راهنمای راه‌اندازی</a>
+        <a href="/admin">پنل مدیریت تلگرام</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span id="footer-copyright">© ۲۰۲۶ تمامی حقوق محفوظ است — Build Your Own Website for Free</span>
+      <div class="footer-social" id="footer-social-links">
+        <a id="footer-tg-icon" href="#order" aria-label="تلگرام" title="تلگرام">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.94 4.3 18.9 19.02c-.23 1.02-.84 1.27-1.7.79l-4.7-3.46-2.27 2.18c-.25.25-.46.46-.94.46l.33-4.77 8.68-7.84c.38-.34-.08-.53-.59-.19l-10.73 6.76-4.62-1.45c-1-.31-1.02-1 .21-1.48l18.06-6.96c.84-.31 1.57.19 1.3 1.44z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="بازگشت به بالا" title="بازگشت به بالا">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Mobile Quick Action Floating Dock -->
+  <nav class="mobile-action-dock" aria-label="دسترسی سریع همراه">
+    <a href="/docs.html" class="dock-item">
+      <span class="dock-icon">📚</span>
+      <span class="dock-label">مستندات</span>
+    </a>
+    <a href="#order" class="dock-item dock-item-highlight">
+      <span class="dock-icon">✨</span>
+      <span class="dock-label">ثبت پیام</span>
+    </a>
+    <a id="mobile-dock-tg" href="#order" class="dock-item">
+      <span class="dock-icon">💬</span>
+      <span class="dock-label">ارتباط تلگرام</span>
+    </a>
+  </nav>
+
+  <!-- Comprehensive Client-side Config Hydration Engine -->
+  <script>
+    (function () {
+      if (!window.__SITE_CONFIG__) return;
+      const c = window.__SITE_CONFIG__;
+
+      // 1. Core SEO & Document Settings
+      if (c.SITE_TITLE) document.title = c.SITE_TITLE;
+      if (c.SITE_LANG) document.documentElement.lang = c.SITE_LANG;
+      if (c.SITE_DIR) document.documentElement.dir = c.SITE_DIR;
+
+      // Helper to safely set text content
+      const setText = (id, val) => {
+        if (!val) return;
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      };
+
+      // Helper to safely set innerHTML
+      const setHTML = (id, val) => {
+        if (!val) return;
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = val;
+      };
+
+      // Helper to toggle section visibility
+      const toggleSection = (sectionId, navSelector, isVisible) => {
+        if (isVisible === false) {
+          const sec = document.getElementById(sectionId);
+          if (sec) sec.style.display = 'none';
+          if (navSelector) {
+            document.querySelectorAll(navSelector).forEach(el => el.style.display = 'none');
+          }
+        }
+      };
+
+      // 2. Branding & Navigation
+      setText('brand-title', c.BRAND_LOGO_TEXT || c.SITE_NAME);
+      setText('brand-subtitle', c.BRAND_LOGO_SUBTITLE || c.SITE_SUBTITLE);
+      setText('nav-link-about', c.NAV_LINK_ABOUT);
+      setText('nav-link-portfolio', c.NAV_LINK_PORTFOLIO);
+      setText('nav-link-services', c.NAV_LINK_SERVICES);
+      setText('nav-link-docs', c.NAV_LINK_DOCS);
+      setText('nav-link-tools', c.NAV_LINK_TOOLS);
+      setText('nav-link-posts', c.NAV_LINK_POSTS);
+      setText('nav-link-qa', c.NAV_LINK_QA);
+      setText('nav-cta-btn', c.NAV_CTA_TEXT);
+      const navCtaEl = document.getElementById('nav-cta-btn');
+      if (navCtaEl && c.NAV_CTA_URL) navCtaEl.href = c.NAV_CTA_URL;
+
+      setText('footer-brand-title', c.BRAND_LOGO_TEXT || c.SITE_NAME);
+      setText('footer-brand-subtitle', c.BRAND_LOGO_SUBTITLE || c.SITE_SUBTITLE);
+      setText('footer-desc', c.FOOTER_DESC || c.SITE_DESCRIPTION);
+      setText('footer-copyright', c.FOOTER_COPYRIGHT);
+
+      // 3. Hero Section
+      if (c.HERO_BADGE) {
+        setHTML('hero-badge-el', '<span class="dot"></span> ' + c.HERO_BADGE);
+      }
+      if (c.HERO_TITLE) {
+        setHTML('hero-title-el', c.HERO_TITLE + (c.HERO_SUBTITLE ? '<span class="hero-title-sub" id="hero-sub-el">' + c.HERO_SUBTITLE + '</span>' : ''));
+      }
+      setText('hero-lead-el', c.HERO_LEAD);
+      setText('hero-tagline-el', c.HERO_TAGLINE);
+
+      const ctaPrim = document.getElementById('hero-cta-primary');
+      if (ctaPrim) {
+        if (c.HERO_CTA_PRIMARY_TEXT) {
+          const s = ctaPrim.querySelector('span'); if (s) s.textContent = c.HERO_CTA_PRIMARY_TEXT;
+        }
+        if (c.HERO_CTA_PRIMARY_URL) ctaPrim.href = c.HERO_CTA_PRIMARY_URL;
+      }
+
+      const ctaSec = document.getElementById('hero-cta-secondary');
+      if (ctaSec) {
+        if (c.HERO_CTA_SECONDARY_TEXT) {
+          const s = ctaSec.querySelector('span'); if (s) s.textContent = c.HERO_CTA_SECONDARY_TEXT;
+        }
+        if (c.HERO_CTA_SECONDARY_URL) ctaSec.href = c.HERO_CTA_SECONDARY_URL;
+      }
+
+      // 4. Interactive Focus Modes
+      setText('hero-focus-btn-1', c.HERO_FOCUS_1_BTN);
+      setText('hero-focus-btn-2', c.HERO_FOCUS_2_BTN);
+      setText('hero-focus-btn-3', c.HERO_FOCUS_3_BTN);
+      setText('hero-focus-title', c.HERO_FOCUS_1_TITLE);
+      setText('hero-focus-desc', c.HERO_FOCUS_1_DESC);
+
+      // 5. Stats Counters
+      toggleSection('hero-stats-section', null, c.SHOW_STATS);
+      setText('stat-1-icon', c.STAT_1_ICON);
+      setText('stat-1-num', c.STAT_1_NUM);
+      setText('stat-1-label', c.STAT_1_LABEL);
+      setText('stat-2-icon', c.STAT_2_ICON);
+      setText('stat-2-num', c.STAT_2_NUM);
+      setText('stat-2-label', c.STAT_2_LABEL);
+      setText('stat-3-icon', c.STAT_3_ICON);
+      setText('stat-3-num', c.STAT_3_NUM);
+      setText('stat-3-label', c.STAT_3_LABEL);
+
+      // 6. About Section
+      toggleSection('about', 'a[href="#about"]', c.SHOW_ABOUT);
+      setText('about-eyebrow', c.ABOUT_EYEBROW);
+      if (c.ABOUT_TITLE) setHTML('about-title', '<span class="icon">✨</span> ' + c.ABOUT_TITLE);
+      setText('about-desc', c.ABOUT_DESCRIPTION);
+      setText('about-card-1-icon', c.ABOUT_CARD_1_ICON);
+      setText('about-card-1-title', c.ABOUT_CARD_1_TITLE);
+      setText('about-card-1-desc', c.ABOUT_CARD_1_DESC);
+      setText('about-card-1-badge', c.ABOUT_CARD_1_BADGE);
+      setText('about-card-2-icon', c.ABOUT_CARD_2_ICON);
+      setText('about-card-2-title', c.ABOUT_CARD_2_TITLE);
+      setText('about-card-2-desc', c.ABOUT_CARD_2_DESC);
+      setText('about-card-2-badge', c.ABOUT_CARD_2_BADGE);
+      setText('about-card-3-icon', c.ABOUT_CARD_3_ICON);
+      setText('about-card-3-title', c.ABOUT_CARD_3_TITLE);
+      setText('about-card-3-desc', c.ABOUT_CARD_3_DESC);
+      setText('about-card-3-badge', c.ABOUT_CARD_3_BADGE);
+
+      // 7. Portfolio / Bento Grid
+      toggleSection('portfolio', 'a[href="#portfolio"]', c.SHOW_PORTFOLIO);
+      setText('bento-eyebrow', c.BENTO_EYEBROW);
+      if (c.BENTO_TITLE) setHTML('bento-title', '<span class="icon">🏛️</span> ' + c.BENTO_TITLE);
+      setText('bento-desc', c.BENTO_DESCRIPTION);
+      setText('bento-1-badge', c.BENTO_1_BADGE);
+      setText('bento-1-title', c.BENTO_1_TITLE);
+      setText('bento-1-desc', c.BENTO_1_DESC);
+      if (c.BENTO_1_LINK) { const b1 = document.getElementById('bento-1-link'); if (b1) b1.href = c.BENTO_1_LINK; }
+      setText('bento-2-badge', c.BENTO_2_BADGE);
+      setText('bento-2-title', c.BENTO_2_TITLE);
+      setText('bento-2-desc', c.BENTO_2_DESC);
+      if (c.BENTO_2_LINK) { const b2 = document.getElementById('bento-2-link'); if (b2) b2.href = c.BENTO_2_LINK; }
+      setText('bento-3-badge', c.BENTO_3_BADGE);
+      setText('bento-3-title', c.BENTO_3_TITLE);
+      setText('bento-3-desc', c.BENTO_3_DESC);
+      if (c.BENTO_3_LINK) { const b3 = document.getElementById('bento-3-link'); if (b3) b3.href = c.BENTO_3_LINK; }
+      setText('bento-4-badge', c.BENTO_4_BADGE);
+      setText('bento-4-title', c.BENTO_4_TITLE);
+      setText('bento-4-desc', c.BENTO_4_DESC);
+      if (c.BENTO_4_LINK) { const b4 = document.getElementById('bento-4-link'); if (b4) b4.href = c.BENTO_4_LINK; }
+
+      // 8. Services Grid
+      toggleSection('services', 'a[href="#services"]', c.SHOW_SERVICES);
+      setText('services-eyebrow', c.SERVICES_EYEBROW);
+      if (c.SERVICES_TITLE) setHTML('services-title', '<span class="icon">🛠</span> ' + c.SERVICES_TITLE);
+      setText('services-desc', c.SERVICES_DESCRIPTION);
+      setText('service-1-icon', c.SERVICE_1_ICON);
+      setText('service-1-title', c.SERVICE_1_TITLE);
+      setText('service-1-desc', c.SERVICE_1_DESC);
+      setText('service-2-icon', c.SERVICE_2_ICON);
+      setText('service-2-title', c.SERVICE_2_TITLE);
+      setText('service-2-desc', c.SERVICE_2_DESC);
+      setText('service-3-icon', c.SERVICE_3_ICON);
+      setText('service-3-title', c.SERVICE_3_TITLE);
+      setText('service-3-desc', c.SERVICE_3_DESC);
+      setText('service-4-icon', c.SERVICE_4_ICON);
+      setText('service-4-title', c.SERVICE_4_TITLE);
+      setText('service-4-desc', c.SERVICE_4_DESC);
+      setText('service-5-icon', c.SERVICE_5_ICON);
+      setText('service-5-title', c.SERVICE_5_TITLE);
+      setText('service-5-desc', c.SERVICE_5_DESC);
+      setText('service-6-icon', c.SERVICE_6_ICON);
+      setText('service-6-title', c.SERVICE_6_TITLE);
+      setText('service-6-desc', c.SERVICE_6_DESC);
+
+      // 9. Process Steps
+      toggleSection('process', 'a[href="#process"]', c.SHOW_PROCESS);
+      setText('process-eyebrow', c.PROCESS_EYEBROW);
+      if (c.PROCESS_TITLE) setHTML('process-title', '<span class="icon">🧭</span> ' + c.PROCESS_TITLE);
+      setText('step-1-title', c.STEP_1_TITLE);
+      setText('step-1-desc', c.STEP_1_DESC);
+      setText('step-2-title', c.STEP_2_TITLE);
+      setText('step-2-desc', c.STEP_2_DESC);
+      setText('step-3-title', c.STEP_3_TITLE);
+      setText('step-3-desc', c.STEP_3_DESC);
+      setText('step-4-title', c.STEP_4_TITLE);
+      setText('step-4-desc', c.STEP_4_DESC);
+
+      // 10. Contact & Order Section
+      toggleSection('order', 'a[href="#order"]', c.SHOW_CONTACT);
+      setText('contact-eyebrow', c.CONTACT_EYEBROW);
+      if (c.CONTACT_TITLE) setHTML('contact-title', '<span class="icon">✉️</span> ' + c.CONTACT_TITLE);
+      setText('contact-desc', c.CONTACT_DESCRIPTION);
+      setText('toast', c.CONTACT_SUBMIT_SUCCESS_MSG);
+
+      // 11. Notes & Articles Section
+      toggleSection('posts', 'a[href="#posts"]', c.SHOW_POSTS);
+      setText('posts-eyebrow', c.POSTS_EYEBROW);
+      if (c.POSTS_TITLE) setHTML('posts-title', '<span class="icon">📝</span> ' + c.POSTS_TITLE);
+      setText('posts-desc', c.POSTS_DESCRIPTION);
+
+      // 12. FAQ & QA Section
+      toggleSection('qa', 'a[href="#qa"]', c.SHOW_QA);
+      setText('qa-eyebrow', c.QA_EYEBROW);
+      if (c.QA_TITLE) setHTML('qa-title', '<span class="icon">💬</span> ' + c.QA_TITLE);
+      setText('qa-desc', c.QA_DESCRIPTION);
+      setText('faq-1-q', c.FAQ_1_Q);
+      setText('faq-1-a', c.FAQ_1_A);
+      setText('faq-2-q', c.FAQ_2_Q);
+      setText('faq-2-a', c.FAQ_2_A);
+      setText('faq-3-q', c.FAQ_3_Q);
+      setText('faq-3-a', c.FAQ_3_A);
+      setText('faq-4-q', c.FAQ_4_Q);
+      setText('faq-4-a', c.FAQ_4_A);
+
+      // 13. Sub-page Navigation Toggles
+      if (c.SHOW_DOCS === false) {
+        document.querySelectorAll('a[href="/docs.html"], a[href="#posts"]').forEach(el => el.style.display = 'none');
+        const postsSec = document.getElementById('posts'); if (postsSec) postsSec.style.display = 'none';
+      }
+      if (c.SHOW_QA === false) {
+        document.querySelectorAll('a[href="#qa"]').forEach(el => el.style.display = 'none');
+        const qaSec = document.getElementById('qa'); if (qaSec) qaSec.style.display = 'none';
+      }
+
+      // 12. Social Profiles & Links
+      const socWrap = document.getElementById('footer-social-links');
+      if (socWrap) {
+        let socHtml = '';
+        if (c.TELEGRAM_USERNAME) {
+          const tgUrl = 'https://t.me/' + c.TELEGRAM_USERNAME;
+          socHtml += `<a href="${tgUrl}" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.3 18.9 19.02c-.23 1.02-.84 1.27-1.7.79l-4.7-3.46-2.27 2.18c-.25.25-.46.46-.94.46l.33-4.77 8.68-7.84c.38-.34-.08-.53-.59-.19l-10.73 6.76-4.62-1.45c-1-.31-1.02-1 .21-1.48l18.06-6.96c.84-.31 1.57.19 1.3 1.44z"/></svg></a>`;
+          const navTg = document.getElementById('nav-tg-link'); if (navTg) { navTg.href = tgUrl; navTg.target = '_blank'; }
+          const asideTg = document.getElementById('aside-tg-link'); if (asideTg) { asideTg.href = tgUrl; asideTg.target = '_blank'; asideTg.textContent = '@' + c.TELEGRAM_USERNAME; }
+          const mobTg = document.getElementById('mobile-dock-tg'); if (mobTg) { mobTg.href = tgUrl; mobTg.target = '_blank'; }
+        }
+        if (c.GITHUB_URL) {
+          socHtml += `<a href="${c.GITHUB_URL}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg></a>`;
+        }
+        if (c.TWITTER_URL) {
+          socHtml += `<a href="${c.TWITTER_URL}" target="_blank" rel="noopener" aria-label="Twitter / X" title="Twitter / X"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>`;
+        }
+        if (c.LINKEDIN_URL) {
+          socHtml += `<a href="${c.LINKEDIN_URL}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.88c-.95 0-1.72.77-1.72 1.72s.77 1.72 1.72 1.72 1.72-.77 1.72-1.72-.77-1.72-1.72-1.72z"/></svg></a>`;
+        }
+        if (c.INSTAGRAM_URL) {
+          socHtml += `<a href="${c.INSTAGRAM_URL}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>`;
+        }
+        if (socHtml) socWrap.innerHTML = socHtml;
+      }
+    })();
+  </script>
+
+  <!-- Core Scripts -->
+  <script src="/script.js?v=5.1.0" defer></script>
+  <script src="/fx.js?v=5.1.0" defer></script>
+</body>
+
+</html>

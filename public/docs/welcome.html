@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark-theme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Your New Free Website</title>
+  <meta name="description" content="A fast, modern website template powered by Cloudflare Workers and Pages with built-in Telegram CMS.">
+  <meta name="category" content="🚀 Getting Started">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text, #1e293b);
+      background: var(--bg, #0f172a);
+    }
+    .note-container {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      color: #f8fafc;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 0;
+      color: #60a5fa;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: #93c5fd;
+      margin-top: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.5rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      background: rgba(96, 165, 250, 0.2);
+      color: #93c5fd;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+    code {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: ui-monospace, monospace;
+      font-size: 0.9em;
+      color: #38bdf8;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .btn-back:hover { background: #2563eb; }
+  </style>
+</head>
+<body>
+  <div class="note-container">
+    <div class="badge">🚀 Getting Started</div>
+    <h1>Welcome to Your New Free Website</h1>
+    <p>Congratulations! Your website template is deployed and ready on <strong>Cloudflare Pages & Workers</strong>.</p>
+    
+    <h2>✨ Core Capabilities</h2>
+    <ul>
+      <li><strong>100% Free Hosting:</strong> Powered by Cloudflare's ultra-fast global edge network.</li>
+      <li><strong>Telegram Bot CMS:</strong> Post documentation, manage comments, answer inquiries, and check stats directly from Telegram.</li>
+      <li><strong>Admin Dashboard:</strong> Access <code>/admin</code> to moderate content and view live site statistics.</li>
+      <li><strong>Fully Customizable:</strong> Configure every detail using the <code>.env</code> file.</li>
+      <li><strong>Documentation & Contact:</strong> Dynamic documentation library, real-time search, and interactive contact system.</li>
+    </ul>
+
+    <h2>🛠 Next Steps</h2>
+    <ol>
+      <li>Open your <code>.env</code> file to customize your site title, author name, links, and colors.</li>
+      <li>Add your <code>BOT_TOKEN</code> and <code>CHAT_ID</code> to enable the Telegram CMS.</li>
+      <li>Double-click <code>deploy.bat</code> anytime to publish your changes instantly!</li>
+    </ol>
+
+    <a href="/docs.html" class="btn-back">← Back to Documentation</a>
+  </div>
+</body>
+</html>
