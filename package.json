@@ -20,6 +20,6 @@
     "dev": "npm run build:config && wrangler dev"
   },
   "devDependencies": {
-    "wrangler": "^3.107.0"
+    "wrangler": "^4.129.0"
   }
 }
