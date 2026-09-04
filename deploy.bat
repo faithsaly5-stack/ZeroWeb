@@ -1,11 +1,12 @@
 @echo off
 setlocal EnableExtensions
-title Cloudflare 1-Click Deployer
+title ZeroWeb Cloudflare 1-Click Deployer
 
 cls
 echo.
 echo ==============================================================================
-echo   BUILD YOUR OWN WEBSITE FOR FREE -- 1-CLICK CLOUDFLARE DEPLOYER
+echo   ZEROWEB -- 1-CLICK CLOUDFLARE DEPLOYER
+echo   Zero-Cost Hosting * Telegram CMS * 100%% .env Customizable
 echo ==============================================================================
 echo.
 
@@ -37,6 +38,11 @@ pause
 exit /b 1
 
 :RunDeploy
+if not exist "node_modules\wrangler" (
+    echo [*] Cloudflare Wrangler not found. Installing automatically...
+    echo     در حال دانلود و نصب خودکار Cloudflare Wrangler...
+    call npm install --no-audit --no-fund
+)
 node scripts/deploy_runner.js
 if errorlevel 1 goto Failed
 

@@ -1,5 +1,5 @@
 # ==============================================================================
-#  BUILD YOUR OWN WEBSITE FOR FREE — CLOUDFLARE 1-CLICK POWERSHELL DEPLOYER
+#  ZEROWEB — CLOUDFLARE 1-CLICK POWERSHELL DEPLOYER
 # ==============================================================================
 
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
@@ -9,7 +9,7 @@ Clear-Host
 Write-Host ""
 Write-Host " ==============================================================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "   BUILD YOUR OWN WEBSITE FOR FREE — 1-CLICK CLOUDFLARE DEPLOYER" -ForegroundColor White
+Write-Host "   ZEROWEB — 1-CLICK CLOUDFLARE DEPLOYER" -ForegroundColor White
 Write-Host "   Zero-Cost Hosting · Telegram CMS · 100% .env Customizable" -ForegroundColor Gray
 Write-Host ""
 Write-Host " ==============================================================================" -ForegroundColor Cyan

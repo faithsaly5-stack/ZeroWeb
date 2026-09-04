@@ -92,7 +92,8 @@ function runSpawn(cmd, args = [], opts = {}) {
 
 async function main() {
   console.log('\n==============================================================================');
-  console.log('  🚀 BUILD YOUR OWN WEBSITE FOR FREE — ONE-CLICK CLOUDFLARE DEPLOY');
+  console.log('  🚀 ZEROWEB — ONE-CLICK CLOUDFLARE DEPLOY');
+  console.log('  استقرار و راه‌اندازی آسان و خودکار روی کلودفلر');
   console.log('==============================================================================\n');
 
   // 0. Auto-initialize .env if missing
@@ -105,17 +106,37 @@ async function main() {
   }
   const env = parseEnv(envFile);
 
-  // 0.1 Check & auto-install dependencies if missing
-  const wranglerDir = path.join(rootDir, 'node_modules', 'wrangler');
-  if (!fs.existsSync(wranglerDir)) {
-    console.log('[*] Installing Cloudflare Wrangler and project dependencies (first-time only)...');
-    console.log('    در حال نصب خودکار ابزارها و وابستگی‌ها...\n');
+  // 0.1 Check & auto-install Cloudflare Wrangler & dependencies
+  const wranglerPkgPath = path.join(rootDir, 'node_modules', 'wrangler', 'package.json');
+  let needWranglerInstall = false;
+
+  if (!fs.existsSync(wranglerPkgPath)) {
+    needWranglerInstall = true;
+    console.log('[*] Cloudflare Wrangler not found. Installing automatically...');
+    console.log('    در حال دانلود و نصب خودکار Cloudflare Wrangler و وابستگی‌ها...\n');
+  } else {
+    try {
+      const wPkg = JSON.parse(fs.readFileSync(wranglerPkgPath, 'utf8'));
+      const major = parseInt((wPkg.version || '0').split('.')[0], 10);
+      if (major < 4) {
+        needWranglerInstall = true;
+        console.log(`[*] Updating Wrangler from v${wPkg.version} to v4 (latest)...`);
+        console.log('    در حال ارتقای خودکار Cloudflare Wrangler به آخرین نسخه...\n');
+      }
+    } catch (e) {
+      needWranglerInstall = true;
+    }
+  }
+
+  if (needWranglerInstall) {
     let installRes = await runSpawn('npm install --no-audit --no-fund', [], { inherit: true });
     if (installRes.code !== 0) {
-      console.warn('    [!] Warning during npm install, attempting to continue...');
-    } else {
-      console.log('    [✓] Dependencies ready.\n');
+      console.warn('    [!] Retrying with direct wrangler install...');
+      await runSpawn('npm install --save-dev wrangler@latest --no-audit --no-fund', [], { inherit: true });
     }
+    console.log('    [✓] Cloudflare Wrangler is ready.\n');
+  } else {
+    console.log('    [✓] Cloudflare Wrangler v4+ is ready.\n');
   }
 
   // 1. Check Cloudflare login status
