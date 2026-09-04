@@ -3,8 +3,8 @@
 # 🚀 ZeroWeb
 ### The $0-Forever Serverless Website Platform with Telegram CMS
 
-[![Language: English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README.md)
-[![زبان: فارسی](https://img.shields.io/badge/زبان-فارسی-emerald?style=for-the-badge)](README.fa.md)
+[![Language: English](.github/badges/lang-en.svg)](README.md)
+[![زبان: فارسی](.github/badges/lang-fa.svg)](README.fa.md)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Cloudflare-Workers%20%26%20Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare" />

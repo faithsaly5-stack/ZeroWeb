@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="28" viewBox="0 0 150 28" role="img" aria-label="Language: English">
+  <title>Language: English</title>
+  <clipPath id="r">
+    <rect width="150" height="28" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="78" height="28" fill="#555555"/>
+    <rect x="78" width="72" height="28" fill="#2563eb"/>
+  </g>
+  <g fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.8">
+    <text x="39" y="18" text-anchor="middle" fill="#ffffff">LANGUAGE</text>
+    <text x="114" y="18" text-anchor="middle" fill="#ffffff">ENGLISH</text>
+  </g>
+</svg>

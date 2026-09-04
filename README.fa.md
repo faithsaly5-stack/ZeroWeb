@@ -3,16 +3,16 @@
 # 🚀 زیرووِب (ZeroWeb)
 ### پلتفرم ساخت وب‌سایت ۱۰۰٪ رایگان و ابری با مدیریت تلگرام
 
-[![زبان: فارسی](https://img.shields.io/badge/زبان-فارسی-emerald?style=for-the-badge)](README.fa.md)
-[![Language: English](https://img.shields.io/badge/Language-English-blue?style=for-the-badge)](README.md)
+[![زبان: فارسی](.github/badges/lang-fa.svg)](README.fa.md)
+[![Language: English](.github/badges/lang-en.svg)](README.md)
 
 <p align="center">
-  <img src="https://img.shields.io/badge/هاستینگ-Cloudflare%20Edge-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare" />
-  <img src="https://img.shields.io/badge/مدیریت%20محتوا-ربات%20تلگرام%20CMS-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram CMS" />
-  <img src="https://img.shields.io/badge/هزینه%20میزبانی-۱۰۰٪%20رایگان%20مادام‌العمر-brightgreen?style=flat-square" alt="رایگان" />
-  <img src="https://img.shields.io/badge/محیط%20اجرا-Node.js%2018%2B-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node" />
-  <img src="https://img.shields.io/badge/پشتیبانی-راست‌چین%20(RTL)%20کامل-purple?style=flat-square" alt="RTL" />
-  <a href="LICENSE"><img src="https://img.shields.io/badge/مجوز-MIT%20متن‌باز-blue?style=flat-square" alt="MIT" /></a>
+  <img src="https://img.shields.io/badge/Cloudflare-Workers%20%26%20Pages-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare" />
+  <img src="https://img.shields.io/badge/Telegram-Bot%20CMS-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram CMS" />
+  <img src="https://img.shields.io/badge/Hosting%20Cost-100%25%20Free%20Forever-brightgreen?style=flat-square" alt="Free" />
+  <img src="https://img.shields.io/badge/Node.js-18%2B%20LTS-339933?style=flat-square&logo=node.js&logoColor=white" alt="Node" />
+  <img src="https://img.shields.io/badge/RTL%20%26%20LTR-Fully%20Supported-purple?style=flat-square" alt="RTL" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT" /></a>
 </p>
 
 ![پیش‌نمایش وب‌سایت](public/og-image-fa.jpg)
