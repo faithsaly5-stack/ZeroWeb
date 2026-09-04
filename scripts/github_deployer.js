@@ -78,10 +78,12 @@ async function main() {
     run('git branch -M main');
     console.log('    [✓] Repository initialized on branch "main".');
   } else {
-    // Ensure branch is named main
     run('git branch -M main');
     console.log('    [✓] Git repository active (branch: main).');
   }
+  // Configure git buffer & HTTP protocol for reliable large pushes on Windows
+  run('git config http.postBuffer 524288000');
+  run('git config http.version HTTP/1.1');
 
   // 3. Strict Safety Enforcement: Ensure .env is never tracked
   const gitignorePath = path.join(rootDir, '.gitignore');
